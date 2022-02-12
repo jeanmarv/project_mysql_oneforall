@@ -59,7 +59,7 @@ CREATE TABLE SpotifyClone.albums(
   FOREIGN KEY (artist_id) REFERENCES SpotifyClone.artists(artist_id)
 ) engine = InnoDB;
 
-INSERT INTO SpotifyClone.albuns (album_name, artist_id, album_release)
+INSERT INTO SpotifyClone.albums (album_name, artist_id,	album_release)
 VALUES
   ('Envious', 1, 1990),
   ('Exuberant', 1, 1993),
@@ -162,7 +162,7 @@ VALUES
 
 CREATE TABLE SpotifyClone.history(
     history_id INT NOT NULL AUTO_INCREMENT,
-    played_date DATETIME,
+    played_date DATETIME NOT NULL,
     song_id INT NOT NULL,
     user_id INT NOT NULL,
     FOREIGN KEY (song_id) REFERENCES SpotifyClone.songs(song_id),
