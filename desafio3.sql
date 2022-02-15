@@ -5,7 +5,10 @@ SELECT
 FROM 
 	SpotifyClone.users AS u
 JOIN 
-SpotifyClone.history AS h ON u.user_id = h.user_id
+    SpotifyClone.history AS h ON u.user_id = h.user_id
 JOIN
-SpotifyClone.songs AS s ON h.song_id = s.song_id
-GROUP BY h.user_id ORDER BY u.user_name;
+    SpotifyClone.songs AS s ON h.song_id = s.song_id
+GROUP BY
+    h.user_id
+ORDER BY
+    u.user_name;
